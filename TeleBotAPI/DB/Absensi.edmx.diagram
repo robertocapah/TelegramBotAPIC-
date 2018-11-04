@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="41f4f29427d44fab85460d5f33762bae" Name="Diagram1">
+        <EntityTypeShape EntityType="ABSENSI_HRDBModel.HistoryLeave" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ABSENSI_HRDBModel.mAPKFile" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ABSENSI_HRDBModel.mAppParam" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ABSENSI_HRDBModel.mMappingOutletDetail" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ABSENSI_HRDBModel.mMappingOutletHeader" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ABSENSI_HRDBModel.mMenu" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ABSENSI_HRDBModel.mMenuAndroid" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ABSENSI_HRDBModel.mModule" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ABSENSI_HRDBModel.mMoodSurvey" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ABSENSI_HRDBModel.mOutlet" Width="1.5" PointX="4.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ABSENSI_HRDBModel.mOutletHistory" Width="1.5" PointX="6.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ABSENSI_HRDBModel.mQrCode" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ABSENSI_HRDBModel.mRole" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ABSENSI_HRDBModel.mRoleAccess" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ABSENSI_HRDBModel.mSample" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ABSENSI_HRDBModel.mSystemConfiguration" Width="1.5" PointX="10.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ABSENSI_HRDBModel.mUser" Width="1.5" PointX="8.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ABSENSI_HRDBModel.mUserRole" Width="1.5" PointX="10.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ABSENSI_HRDBModel.tAbsenUser_mobile" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ABSENSI_HRDBModel.tAbsenUser_mobile_old" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ABSENSI_HRDBModel.tLeaveType" Width="1.5" PointX="12.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ABSENSI_HRDBModel.tLogAPI" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ABSENSI_HRDBModel.tMenuByRole" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ABSENSI_HRDBModel.tMoodSurveyId" Width="1.5" PointX="2.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ABSENSI_HRDBModel.trackingLocation_mobile" Width="1.5" PointX="4.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ABSENSI_HRDBModel.tReportingData" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ABSENSI_HRDBModel.tScheduleEmployeesAbsence" Width="1.5" PointX="14.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ABSENSI_HRDBModel.tUserLogin_mobile" Width="1.5" PointX="14.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ABSENSI_HRDBModel.tUserLoginArea_Mobile" Width="1.5" PointX="10.75" PointY="15.75" IsExpanded="true" />
+        <AssociationConnector Association="ABSENSI_HRDBModel.FK_tMenuByRole_mMenuAndroid" ManuallyRouted="false" />
+        <AssociationConnector Association="ABSENSI_HRDBModel.FK_tMenuByRole_mRole" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

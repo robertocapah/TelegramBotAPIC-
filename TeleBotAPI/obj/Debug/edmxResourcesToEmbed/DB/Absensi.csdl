@@ -1,0 +1,512 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ABSENSI_HRDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="HistoryLeave">
+    <Key>
+      <PropertyRef Name="intHistoryLeaveId" />
+    </Key>
+    <Property Name="intHistoryLeaveId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="txtGuiIdAbsen" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="txtNIK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="intLeaveId" Type="Int32" />
+    <Property Name="txtLeaveName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtReason" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="txtTime" Type="DateTime" Precision="3" />
+    <Property Name="dtInserted" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="mAPKFile">
+    <Key>
+      <PropertyRef Name="intIdLink" />
+    </Key>
+    <Property Name="intIdLink" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="txtNameApp" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="txtLinkApp" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="bitActive" Type="Int32" />
+    <Property Name="dtInserted" Type="DateTime" Precision="3" />
+    <Property Name="txtInsertedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mAppParam">
+    <Key>
+      <PropertyRef Name="txtAppParamID" />
+    </Key>
+    <Property Name="txtAppParamID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="txtAppParamDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="txtAppParamVariable" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mMappingOutletDetail">
+    <Key>
+      <PropertyRef Name="intDetailId" />
+    </Key>
+    <Property Name="intDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="intHeaderId" Type="Int32" />
+    <Property Name="txtPositionCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtJobtitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtOrgGroupCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtOrgCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtJobLvlCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtCostCentreCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtEmpType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtBranchCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bitActive" Type="Int32" />
+    <Property Name="dtInserted" Type="DateTime" Precision="3" />
+    <Property Name="dtUpdated" Type="DateTime" Precision="3" />
+    <Property Name="txtInsertedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtUpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mMappingOutletHeader">
+    <Key>
+      <PropertyRef Name="intHeader" />
+    </Key>
+    <Property Name="intHeader" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="intOutletId" Type="Int32" />
+    <Property Name="bitActive" Type="Int32" />
+    <Property Name="dtInserted" Type="DateTime" Precision="3" />
+    <Property Name="dtUpdated" Type="DateTime" Precision="3" />
+    <Property Name="txtInsertedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtUpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mMenu">
+    <Key>
+      <PropertyRef Name="intMenuID" />
+    </Key>
+    <Property Name="intMenuID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="intParentID" Type="Int32" />
+    <Property Name="txtMenuName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="intModuleID" Type="Int32" />
+    <Property Name="txtLink" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="intOrderID" Type="Int32" />
+    <Property Name="bitActive" Type="Boolean" />
+    <Property Name="txtCreateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtCreateDate" Type="DateTime" Precision="3" />
+    <Property Name="txtUpdateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtUpdateDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="mMenuAndroid">
+    <Key>
+      <PropertyRef Name="intMenuID" />
+    </Key>
+    <Property Name="intMenuID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="txtMenu" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="tMenuByRoles" Relationship="Self.FK_tMenuByRole_mMenuAndroid" FromRole="mMenuAndroid" ToRole="tMenuByRole" />
+  </EntityType>
+  <EntityType Name="mModule">
+    <Key>
+      <PropertyRef Name="intModuleID" />
+    </Key>
+    <Property Name="intModuleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="txtModuleName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="txtDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="txtCreateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtCreateDate" Type="DateTime" Precision="3" />
+    <Property Name="txtUpdateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtUpdateDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="mMoodSurvey">
+    <Key>
+      <PropertyRef Name="intMoodId" />
+    </Key>
+    <Property Name="intMoodId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="txtMoodDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bitactive" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="mOutlet">
+    <Key>
+      <PropertyRef Name="mOutletId" />
+    </Key>
+    <Property Name="mOutletId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="intOutletId" Type="Int32" />
+    <Property Name="txtOutletName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtLongitude" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtLatitude" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtBranchCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="intRegionID" Type="Int32" />
+    <Property Name="bitactive" Type="Int32" />
+    <Property Name="dtInserted" Type="DateTime" Precision="3" />
+    <Property Name="InsertedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dtUpdated" Type="DateTime" Precision="3" />
+    <Property Name="txtUpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mOutletHistory">
+    <Key>
+      <PropertyRef Name="mOutletId" />
+    </Key>
+    <Property Name="mOutletId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="intOutletId" Type="Int32" />
+    <Property Name="txtOutletName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtLongitude" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtLatitude" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtBranchCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="intRegionID" Type="Int32" />
+    <Property Name="bitactive" Type="Int32" />
+    <Property Name="dtInserted" Type="DateTime" Precision="3" />
+    <Property Name="InsertedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dtUpdated" Type="DateTime" Precision="3" />
+    <Property Name="txtUpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mQrCode">
+    <Key>
+      <PropertyRef Name="intQrId" />
+    </Key>
+    <Property Name="intQrId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="txtCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dtDate" Type="DateTime" Precision="0" />
+    <Property Name="mOutletId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtOutletName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="bitActive" Type="Int32" />
+    <Property Name="dtInserted" Type="DateTime" Precision="3" />
+    <Property Name="txtInsertedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dtUpdated" Type="DateTime" Precision="3" />
+    <Property Name="txtUpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mRole">
+    <Key>
+      <PropertyRef Name="intRoleID" />
+    </Key>
+    <Property Name="intRoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="txtRoleName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="txtCreateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtCreateDate" Type="DateTime" Precision="3" />
+    <Property Name="txtUpdateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="bitSuperuser" Type="Boolean" />
+    <NavigationProperty Name="tMenuByRoles" Relationship="Self.FK_tMenuByRole_mRole" FromRole="mRole" ToRole="tMenuByRole" />
+  </EntityType>
+  <EntityType Name="mRoleAccess">
+    <Key>
+      <PropertyRef Name="intRoleAccessID" />
+    </Key>
+    <Property Name="intRoleAccessID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="intRoleID" Type="Int32" />
+    <Property Name="intModuleID" Type="Int32" />
+    <Property Name="bitEdit" Type="Boolean" />
+    <Property Name="bitView" Type="Boolean" />
+    <Property Name="bitDelete" Type="Boolean" />
+    <Property Name="bitPrint" Type="Boolean" />
+    <Property Name="txtCreateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtCreateDate" Type="DateTime" Precision="3" />
+    <Property Name="txtUpdateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtUpdateDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="mSample">
+    <Key>
+      <PropertyRef Name="intID" />
+    </Key>
+    <Property Name="intID" Type="Int32" Nullable="false" />
+    <Property Name="txtSample1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mSystemConfiguration">
+    <Key>
+      <PropertyRef Name="txtSystemConfigurationID" />
+      <PropertyRef Name="txtKeyID" />
+    </Key>
+    <Property Name="txtSystemConfigurationID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="txtKeyID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="intModuleID" Type="Int32" />
+    <Property Name="txtDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="txtDefaultValue" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="txtValue" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="txtCreateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtCreateDate" Type="DateTime" Precision="3" />
+    <Property Name="txtUpdateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtUpdateDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="mUser">
+    <Key>
+      <PropertyRef Name="intUserID" />
+    </Key>
+    <Property Name="intUserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="txtUserName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="txtNick" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="txtEmpID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="txtEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="intDepartmentID" Type="Int32" />
+    <Property Name="intLOBID" Type="Int32" />
+    <Property Name="txtCompanyCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="bitActive" Type="Boolean" />
+    <Property Name="txtDomainName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="bitUseActiveDirectory" Type="Boolean" />
+    <Property Name="txtPassword" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="txtCreateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtCreateDate" Type="DateTime" Precision="3" />
+    <Property Name="txtUpdateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtUpdateDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="mUserRole">
+    <Key>
+      <PropertyRef Name="intUserRoleID" />
+    </Key>
+    <Property Name="intUserRoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="intRoleID" Type="Int32" Nullable="false" />
+    <Property Name="intUserID" Type="Int32" Nullable="false" />
+    <Property Name="txtCreateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtCreateDate" Type="DateTime" Precision="3" />
+    <Property Name="txtUpdateBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtUpdateDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tAbsenUser_mobile">
+    <Key>
+      <PropertyRef Name="txtGUI_ID" />
+    </Key>
+    <Property Name="txtGUI_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="txtGuiIdLogin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtNIK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="intOutletId" Type="Int32" />
+    <Property Name="dtCheckin" Type="DateTime" Precision="3" />
+    <Property Name="dtCheckout" Type="DateTime" Precision="3" />
+    <Property Name="isCheckoutBySystem" Type="Int32" />
+    <Property Name="txtLongitude" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtLatitude" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="intRegionID" Type="Int32" />
+    <Property Name="txtBranchCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtDeviceId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtDeviceName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="qrCode" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="txtHeaderMappingCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtDetailMappingCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="intBitActive" Type="Int32" />
+    <Property Name="dtInserted" Type="DateTime" Precision="3" />
+    <Property Name="txtInsertedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dtUpdated" Type="DateTime" Precision="3" />
+    <Property Name="txtUpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tAbsenUser_mobile_old">
+    <Key>
+      <PropertyRef Name="txtGUI_ID" />
+    </Key>
+    <Property Name="txtGUI_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="txtGuiIdLogin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtDataIdGL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtOutletCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dtAbsen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dtCheckin" Type="DateTime" Precision="3" />
+    <Property Name="dtCheckout" Type="DateTime" Precision="3" />
+    <Property Name="isCheckoutBySystem" Type="Int32" />
+    <Property Name="txtLongitude" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtLatitude" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtDeviceId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtImg1" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="txtImg2" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="intBitActive" Type="Int32" />
+    <Property Name="dtInserted" Type="DateTime" Precision="3" />
+    <Property Name="txtInsertedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dtUpdated" Type="DateTime" Precision="3" />
+    <Property Name="txtUpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tLeaveType">
+    <Key>
+      <PropertyRef Name="typeLeaveId" />
+    </Key>
+    <Property Name="typeLeaveId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="txtleaveCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtleaveName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtKeterangan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bitActive" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tLogAPI">
+    <Key>
+      <PropertyRef Name="txtGUIID" />
+    </Key>
+    <Property Name="txtGUIID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="txtNamaMethod" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="txtParam" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="intResult" Type="Int32" />
+    <Property Name="txtMessage" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+    <Property Name="txtResult" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="txtFrom" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="txtKeterangan" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="txtversion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtInserted" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tMenuByRole">
+    <Key>
+      <PropertyRef Name="intMenuOptionID" />
+    </Key>
+    <Property Name="intMenuOptionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="intRoleId" Type="Int32" />
+    <Property Name="intMenuId" Type="Int32" />
+    <Property Name="bitActive" Type="Int32" />
+    <NavigationProperty Name="mMenuAndroid" Relationship="Self.FK_tMenuByRole_mMenuAndroid" FromRole="tMenuByRole" ToRole="mMenuAndroid" />
+    <NavigationProperty Name="mRole" Relationship="Self.FK_tMenuByRole_mRole" FromRole="tMenuByRole" ToRole="mRole" />
+  </EntityType>
+  <EntityType Name="tMoodSurveyId">
+    <Key>
+      <PropertyRef Name="intMoodSurveyId" />
+    </Key>
+    <Property Name="intMoodSurveyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="txtGUILogin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtNIK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="intMoodIdLogin" Type="Int32" />
+    <Property Name="txtMoodDescLogin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="intMoodIdCheckout" Type="Int32" />
+    <Property Name="txtMoodDescCheckout" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dtTimeMobile" Type="DateTime" Precision="3" />
+    <Property Name="dtInserted" Type="DateTime" Precision="3" />
+    <Property Name="dtUpdated" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="trackingLocation_mobile">
+    <Key>
+      <PropertyRef Name="GuiId" />
+    </Key>
+    <Property Name="GuiId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="txtGuiIdLogin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtLongitude" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtLatitude" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtTime" Type="DateTime" Precision="3" />
+    <Property Name="txtUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtDeviceId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtBranchCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtNIK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="intSequence" Type="Int32" />
+    <Property Name="dtDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dtInserted" Type="DateTime" Precision="3" />
+    <Property Name="dtUpdated" Type="DateTime" Precision="3" />
+    <Property Name="txtInsertedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtUpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tReportingData">
+    <Key>
+      <PropertyRef Name="intReportId" />
+    </Key>
+    <Property Name="intReportId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="intLeaveId" Type="Int32" />
+    <Property Name="txtNIK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtEmployeeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dtAbsenceDate" Type="DateTime" Precision="0" />
+    <Property Name="dtDateIn" Type="DateTime" Precision="0" />
+    <Property Name="dtTimeIn" Type="DateTime" Precision="3" />
+    <Property Name="dtDateOut" Type="DateTime" Precision="0" />
+    <Property Name="dtTimeOut" Type="DateTime" Precision="3" />
+    <Property Name="txtShiftCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtAtdIn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtAtdOut" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="dtInserted" Type="DateTime" Precision="3" />
+    <Property Name="dtUpdated" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tScheduleEmployeesAbsence">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="txtNIK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtEmpName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dtDate" Type="DateTime" Precision="0" />
+    <Property Name="workGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fixWorkSchedule" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="shiftId" Type="Int32" />
+    <Property Name="shiftCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="shiftName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="shiftIn" Type="DateTime" Precision="3" />
+    <Property Name="shiftOut" Type="DateTime" Precision="3" />
+    <Property Name="dtInserted" Type="DateTime" Precision="3" />
+    <Property Name="dtUpdated" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tUserLogin_mobile">
+    <Key>
+      <PropertyRef Name="txtGUI" />
+    </Key>
+    <Property Name="idUserLogin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IntCabangID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtGUI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="txtNameApp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="employeeId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="jabatanId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="jabatanName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtKodeCabang" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtNamaCabang" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtAreaBranchCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtUserID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dtLastLogin" Type="DateTime" Precision="3" />
+    <Property Name="txtDeviceId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dtLogOut" Type="DateTime" Precision="3" />
+    <Property Name="txtInsertedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dtInserted" Type="DateTime" Precision="3" />
+    <Property Name="txtUpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dtUpdated" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tUserLoginArea_Mobile">
+    <Key>
+      <PropertyRef Name="txtDetailID" />
+    </Key>
+    <Property Name="txtDetailID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="txtGUI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="employeeId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtBranchArea" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtRegion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="bitActive" Type="Int32" />
+    <Property Name="dtInserted" Type="DateTime" Precision="3" />
+    <Property Name="dtUpdated" Type="DateTime" Precision="3" />
+    <Property Name="txtInserted" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="txtUpdated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_tMenuByRole_mMenuAndroid">
+    <End Role="mMenuAndroid" Type="Self.mMenuAndroid" Multiplicity="0..1" />
+    <End Role="tMenuByRole" Type="Self.tMenuByRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mMenuAndroid">
+        <PropertyRef Name="intMenuID" />
+      </Principal>
+      <Dependent Role="tMenuByRole">
+        <PropertyRef Name="intMenuId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tMenuByRole_mRole">
+    <End Role="mRole" Type="Self.mRole" Multiplicity="0..1" />
+    <End Role="tMenuByRole" Type="Self.tMenuByRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mRole">
+        <PropertyRef Name="intRoleID" />
+      </Principal>
+      <Dependent Role="tMenuByRole">
+        <PropertyRef Name="intRoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ABSENSI_HRDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="HistoryLeaves" EntityType="Self.HistoryLeave" />
+    <EntitySet Name="mAPKFiles" EntityType="Self.mAPKFile" />
+    <EntitySet Name="mAppParams" EntityType="Self.mAppParam" />
+    <EntitySet Name="mMappingOutletDetails" EntityType="Self.mMappingOutletDetail" />
+    <EntitySet Name="mMappingOutletHeaders" EntityType="Self.mMappingOutletHeader" />
+    <EntitySet Name="mMenus" EntityType="Self.mMenu" />
+    <EntitySet Name="mMenuAndroids" EntityType="Self.mMenuAndroid" />
+    <EntitySet Name="mModules" EntityType="Self.mModule" />
+    <EntitySet Name="mMoodSurveys" EntityType="Self.mMoodSurvey" />
+    <EntitySet Name="mOutlets" EntityType="Self.mOutlet" />
+    <EntitySet Name="mOutletHistories" EntityType="Self.mOutletHistory" />
+    <EntitySet Name="mQrCodes" EntityType="Self.mQrCode" />
+    <EntitySet Name="mRoles" EntityType="Self.mRole" />
+    <EntitySet Name="mRoleAccesses" EntityType="Self.mRoleAccess" />
+    <EntitySet Name="mSamples" EntityType="Self.mSample" />
+    <EntitySet Name="mSystemConfigurations" EntityType="Self.mSystemConfiguration" />
+    <EntitySet Name="mUsers" EntityType="Self.mUser" />
+    <EntitySet Name="mUserRoles" EntityType="Self.mUserRole" />
+    <EntitySet Name="tAbsenUser_mobile" EntityType="Self.tAbsenUser_mobile" />
+    <EntitySet Name="tAbsenUser_mobile_old" EntityType="Self.tAbsenUser_mobile_old" />
+    <EntitySet Name="tLeaveTypes" EntityType="Self.tLeaveType" />
+    <EntitySet Name="tLogAPIs" EntityType="Self.tLogAPI" />
+    <EntitySet Name="tMenuByRoles" EntityType="Self.tMenuByRole" />
+    <EntitySet Name="tMoodSurveyIds" EntityType="Self.tMoodSurveyId" />
+    <EntitySet Name="trackingLocation_mobile" EntityType="Self.trackingLocation_mobile" />
+    <EntitySet Name="tReportingDatas" EntityType="Self.tReportingData" />
+    <EntitySet Name="tScheduleEmployeesAbsences" EntityType="Self.tScheduleEmployeesAbsence" />
+    <EntitySet Name="tUserLogin_mobile" EntityType="Self.tUserLogin_mobile" />
+    <EntitySet Name="tUserLoginArea_Mobile" EntityType="Self.tUserLoginArea_Mobile" />
+    <AssociationSet Name="FK_tMenuByRole_mMenuAndroid" Association="Self.FK_tMenuByRole_mMenuAndroid">
+      <End Role="mMenuAndroid" EntitySet="mMenuAndroids" />
+      <End Role="tMenuByRole" EntitySet="tMenuByRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tMenuByRole_mRole" Association="Self.FK_tMenuByRole_mRole">
+      <End Role="mRole" EntitySet="mRoles" />
+      <End Role="tMenuByRole" EntitySet="tMenuByRoles" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

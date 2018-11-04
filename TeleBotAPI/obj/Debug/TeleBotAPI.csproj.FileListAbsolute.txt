@@ -1,0 +1,17 @@
+D:\PROJECTLATIAN\BotTelegram\TeleBotAPI\TeleBotAPI\bin\Debug\TeleBotAPI.exe.config
+D:\PROJECTLATIAN\BotTelegram\TeleBotAPI\TeleBotAPI\bin\Debug\TeleBotAPI.exe
+D:\PROJECTLATIAN\BotTelegram\TeleBotAPI\TeleBotAPI\bin\Debug\TeleBotAPI.pdb
+D:\PROJECTLATIAN\BotTelegram\TeleBotAPI\TeleBotAPI\bin\Debug\Newtonsoft.Json.dll
+D:\PROJECTLATIAN\BotTelegram\TeleBotAPI\TeleBotAPI\bin\Debug\Telegram.Bot.dll
+D:\PROJECTLATIAN\BotTelegram\TeleBotAPI\TeleBotAPI\bin\Debug\Newtonsoft.Json.xml
+D:\PROJECTLATIAN\BotTelegram\TeleBotAPI\TeleBotAPI\bin\Debug\Telegram.Bot.xml
+D:\PROJECTLATIAN\BotTelegram\TeleBotAPI\TeleBotAPI\obj\Debug\TeleBotAPI.csprojResolveAssemblyReference.cache
+D:\PROJECTLATIAN\BotTelegram\TeleBotAPI\TeleBotAPI\obj\Debug\TeleBotAPI.exe
+D:\PROJECTLATIAN\BotTelegram\TeleBotAPI\TeleBotAPI\obj\Debug\TeleBotAPI.pdb
+D:\PROJECTLATIAN\BotTelegram\TeleBotAPI\TeleBotAPI\bin\Debug\EntityFramework.dll
+D:\PROJECTLATIAN\BotTelegram\TeleBotAPI\TeleBotAPI\bin\Debug\EntityFramework.SqlServer.dll
+D:\PROJECTLATIAN\BotTelegram\TeleBotAPI\TeleBotAPI\bin\Debug\EntityFramework.xml
+D:\PROJECTLATIAN\BotTelegram\TeleBotAPI\TeleBotAPI\bin\Debug\EntityFramework.SqlServer.xml
+D:\PROJECTLATIAN\BotTelegram\TeleBotAPI\TeleBotAPI\obj\Debug\TeleBotAPI.MyForm.resources
+D:\PROJECTLATIAN\BotTelegram\TeleBotAPI\TeleBotAPI\obj\Debug\TeleBotAPI.csproj.GenerateResource.Cache
+D:\PROJECTLATIAN\BotTelegram\TeleBotAPI\TeleBotAPI\obj\Debug\TeleBotAPI.Resource1.resources

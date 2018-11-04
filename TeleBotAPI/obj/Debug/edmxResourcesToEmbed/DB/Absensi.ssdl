@@ -1,0 +1,508 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ABSENSI_HRDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="HistoryLeave">
+    <Key>
+      <PropertyRef Name="intHistoryLeaveId" />
+    </Key>
+    <Property Name="intHistoryLeaveId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="txtGuiIdAbsen" Type="varchar" MaxLength="200" />
+    <Property Name="txtNIK" Type="varchar" MaxLength="50" />
+    <Property Name="txtUsername" Type="varchar" MaxLength="50" />
+    <Property Name="intLeaveId" Type="int" />
+    <Property Name="txtLeaveName" Type="varchar" MaxLength="50" />
+    <Property Name="txtReason" Type="varchar" MaxLength="100" />
+    <Property Name="txtTime" Type="datetime" />
+    <Property Name="dtInserted" Type="datetime" />
+  </EntityType>
+  <EntityType Name="mAPKFile">
+    <Key>
+      <PropertyRef Name="intIdLink" />
+    </Key>
+    <Property Name="intIdLink" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="txtNameApp" Type="varchar" MaxLength="200" />
+    <Property Name="txtLinkApp" Type="varchar" MaxLength="200" />
+    <Property Name="bitActive" Type="int" />
+    <Property Name="dtInserted" Type="datetime" />
+    <Property Name="txtInsertedBy" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="mAppParam">
+    <Key>
+      <PropertyRef Name="txtAppParamID" />
+    </Key>
+    <Property Name="txtAppParamID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="txtAppParamDescription" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="txtAppParamVariable" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mMappingOutletDetail">
+    <Key>
+      <PropertyRef Name="intDetailId" />
+    </Key>
+    <Property Name="intDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="intHeaderId" Type="int" />
+    <Property Name="txtPositionCode" Type="varchar" MaxLength="50" />
+    <Property Name="txtJobtitle" Type="varchar" MaxLength="50" />
+    <Property Name="txtOrgGroupCode" Type="varchar" MaxLength="50" />
+    <Property Name="txtOrgCode" Type="varchar" MaxLength="50" />
+    <Property Name="txtJobLvlCode" Type="varchar" MaxLength="50" />
+    <Property Name="txtCostCentreCode" Type="varchar" MaxLength="50" />
+    <Property Name="txtEmpType" Type="varchar" MaxLength="50" />
+    <Property Name="txtBranchCode" Type="varchar" MaxLength="50" />
+    <Property Name="bitActive" Type="int" />
+    <Property Name="dtInserted" Type="datetime" />
+    <Property Name="dtUpdated" Type="datetime" />
+    <Property Name="txtInsertedBy" Type="varchar" MaxLength="50" />
+    <Property Name="txtUpdatedBy" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="mMappingOutletHeader">
+    <Key>
+      <PropertyRef Name="intHeader" />
+    </Key>
+    <Property Name="intHeader" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="intOutletId" Type="int" />
+    <Property Name="bitActive" Type="int" />
+    <Property Name="dtInserted" Type="datetime" />
+    <Property Name="dtUpdated" Type="datetime" />
+    <Property Name="txtInsertedBy" Type="varchar" MaxLength="50" />
+    <Property Name="txtUpdatedBy" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="mMenu">
+    <Key>
+      <PropertyRef Name="intMenuID" />
+    </Key>
+    <Property Name="intMenuID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="intParentID" Type="int" />
+    <Property Name="txtMenuName" Type="varchar" MaxLength="50" />
+    <Property Name="txtDescription" Type="varchar" MaxLength="100" />
+    <Property Name="intModuleID" Type="int" />
+    <Property Name="txtLink" Type="varchar" MaxLength="250" />
+    <Property Name="intOrderID" Type="int" />
+    <Property Name="bitActive" Type="bit" />
+    <Property Name="txtCreateBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtCreateDate" Type="datetime" />
+    <Property Name="txtUpdateBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtUpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="mMenuAndroid">
+    <Key>
+      <PropertyRef Name="intMenuID" />
+    </Key>
+    <Property Name="intMenuID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="txtMenu" Type="nchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="mModule">
+    <Key>
+      <PropertyRef Name="intModuleID" />
+    </Key>
+    <Property Name="intModuleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="txtModuleName" Type="varchar" MaxLength="100" />
+    <Property Name="txtDescription" Type="varchar" MaxLength="100" />
+    <Property Name="txtCreateBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtCreateDate" Type="datetime" />
+    <Property Name="txtUpdateBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtUpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="mMoodSurvey">
+    <Key>
+      <PropertyRef Name="intMoodId" />
+    </Key>
+    <Property Name="intMoodId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="txtMoodDesc" Type="varchar" MaxLength="50" />
+    <Property Name="bitactive" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="mOutlet">
+    <Key>
+      <PropertyRef Name="mOutletId" />
+    </Key>
+    <Property Name="mOutletId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="intOutletId" Type="int" />
+    <Property Name="txtOutletName" Type="varchar" MaxLength="50" />
+    <Property Name="txtLongitude" Type="varchar" MaxLength="50" />
+    <Property Name="txtLatitude" Type="varchar" MaxLength="50" />
+    <Property Name="txtBranchCode" Type="varchar" MaxLength="50" />
+    <Property Name="intRegionID" Type="int" />
+    <Property Name="bitactive" Type="int" />
+    <Property Name="dtInserted" Type="datetime" />
+    <Property Name="InsertedBy" Type="varchar" MaxLength="50" />
+    <Property Name="dtUpdated" Type="datetime" />
+    <Property Name="txtUpdatedBy" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="mOutletHistory">
+    <Key>
+      <PropertyRef Name="mOutletId" />
+    </Key>
+    <Property Name="mOutletId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="intOutletId" Type="int" />
+    <Property Name="txtOutletName" Type="varchar" MaxLength="50" />
+    <Property Name="txtLongitude" Type="varchar" MaxLength="50" />
+    <Property Name="txtLatitude" Type="varchar" MaxLength="50" />
+    <Property Name="txtBranchCode" Type="varchar" MaxLength="50" />
+    <Property Name="intRegionID" Type="int" />
+    <Property Name="bitactive" Type="int" />
+    <Property Name="dtInserted" Type="datetime" />
+    <Property Name="InsertedBy" Type="varchar" MaxLength="50" />
+    <Property Name="dtUpdated" Type="datetime" />
+    <Property Name="txtUpdatedBy" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="mQrCode">
+    <Key>
+      <PropertyRef Name="intQrId" />
+    </Key>
+    <Property Name="intQrId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="txtCode" Type="varchar" MaxLength="50" />
+    <Property Name="dtDate" Type="date" />
+    <Property Name="mOutletId" Type="varchar" MaxLength="50" />
+    <Property Name="txtOutletName" Type="varchar" MaxLength="500" />
+    <Property Name="bitActive" Type="int" />
+    <Property Name="dtInserted" Type="datetime" />
+    <Property Name="txtInsertedBy" Type="varchar" MaxLength="50" />
+    <Property Name="dtUpdated" Type="datetime" />
+    <Property Name="txtUpdatedBy" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="mRole">
+    <Key>
+      <PropertyRef Name="intRoleID" />
+    </Key>
+    <Property Name="intRoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="txtRoleName" Type="varchar" MaxLength="100" />
+    <Property Name="txtCreateBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtCreateDate" Type="datetime" />
+    <Property Name="txtUpdateBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtUpdateDate" Type="datetime" />
+    <Property Name="bitSuperuser" Type="bit" />
+  </EntityType>
+  <EntityType Name="mRoleAccess">
+    <Key>
+      <PropertyRef Name="intRoleAccessID" />
+    </Key>
+    <Property Name="intRoleAccessID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="intRoleID" Type="int" />
+    <Property Name="intModuleID" Type="int" />
+    <Property Name="bitEdit" Type="bit" />
+    <Property Name="bitView" Type="bit" />
+    <Property Name="bitDelete" Type="bit" />
+    <Property Name="bitPrint" Type="bit" />
+    <Property Name="txtCreateBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtCreateDate" Type="datetime" />
+    <Property Name="txtUpdateBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtUpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="mSample">
+    <Key>
+      <PropertyRef Name="intID" />
+    </Key>
+    <Property Name="intID" Type="int" Nullable="false" />
+    <Property Name="txtSample1" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="mSystemConfiguration">
+    <Key>
+      <PropertyRef Name="txtSystemConfigurationID" />
+      <PropertyRef Name="txtKeyID" />
+    </Key>
+    <Property Name="txtSystemConfigurationID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="txtKeyID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="intModuleID" Type="int" />
+    <Property Name="txtDescription" Type="varchar" MaxLength="100" />
+    <Property Name="txtDefaultValue" Type="varchar" MaxLength="250" />
+    <Property Name="txtValue" Type="varchar" MaxLength="250" />
+    <Property Name="txtCreateBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtCreateDate" Type="datetime" />
+    <Property Name="txtUpdateBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtUpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="mUser">
+    <Key>
+      <PropertyRef Name="intUserID" />
+    </Key>
+    <Property Name="intUserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="txtUserName" Type="varchar" MaxLength="100" />
+    <Property Name="txtNick" Type="varchar" MaxLength="10" />
+    <Property Name="txtEmpID" Type="varchar" MaxLength="10" />
+    <Property Name="txtEmail" Type="varchar" MaxLength="100" />
+    <Property Name="intDepartmentID" Type="int" />
+    <Property Name="intLOBID" Type="int" />
+    <Property Name="txtCompanyCode" Type="varchar" MaxLength="10" />
+    <Property Name="bitActive" Type="bit" />
+    <Property Name="txtDomainName" Type="varchar" MaxLength="100" />
+    <Property Name="bitUseActiveDirectory" Type="bit" />
+    <Property Name="txtPassword" Type="varchar" MaxLength="200" />
+    <Property Name="txtCreateBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtCreateDate" Type="datetime" />
+    <Property Name="txtUpdateBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtUpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="mUserRole">
+    <Key>
+      <PropertyRef Name="intUserRoleID" />
+    </Key>
+    <Property Name="intUserRoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="intRoleID" Type="int" Nullable="false" />
+    <Property Name="intUserID" Type="int" Nullable="false" />
+    <Property Name="txtCreateBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtCreateDate" Type="datetime" />
+    <Property Name="txtUpdateBy" Type="varchar" MaxLength="100" />
+    <Property Name="dtUpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tAbsenUser_mobile">
+    <Key>
+      <PropertyRef Name="txtGUI_ID" />
+    </Key>
+    <Property Name="txtGUI_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="txtGuiIdLogin" Type="varchar" MaxLength="50" />
+    <Property Name="txtNIK" Type="varchar" MaxLength="50" />
+    <Property Name="intOutletId" Type="int" />
+    <Property Name="dtCheckin" Type="datetime" />
+    <Property Name="dtCheckout" Type="datetime" />
+    <Property Name="isCheckoutBySystem" Type="int" />
+    <Property Name="txtLongitude" Type="varchar" MaxLength="50" />
+    <Property Name="txtLatitude" Type="varchar" MaxLength="50" />
+    <Property Name="intRegionID" Type="int" />
+    <Property Name="txtBranchCode" Type="varchar" MaxLength="50" />
+    <Property Name="txtDeviceId" Type="varchar" MaxLength="50" />
+    <Property Name="txtDeviceName" Type="varchar" MaxLength="50" />
+    <Property Name="txtUserId" Type="varchar" MaxLength="50" />
+    <Property Name="qrCode" Type="varchar" MaxLength="300" />
+    <Property Name="txtHeaderMappingCode" Type="varchar" MaxLength="50" />
+    <Property Name="txtDetailMappingCode" Type="varchar" MaxLength="50" />
+    <Property Name="intBitActive" Type="int" />
+    <Property Name="dtInserted" Type="datetime" />
+    <Property Name="txtInsertedBy" Type="varchar" MaxLength="50" />
+    <Property Name="dtUpdated" Type="datetime" />
+    <Property Name="txtUpdatedBy" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tAbsenUser_mobile_old">
+    <Key>
+      <PropertyRef Name="txtGUI_ID" />
+    </Key>
+    <Property Name="txtGUI_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="txtGuiIdLogin" Type="varchar" MaxLength="50" />
+    <Property Name="txtDataIdGL" Type="varchar" MaxLength="50" />
+    <Property Name="txtOutletCode" Type="varchar" MaxLength="50" />
+    <Property Name="dtAbsen" Type="varchar" MaxLength="50" />
+    <Property Name="dtCheckin" Type="datetime" />
+    <Property Name="dtCheckout" Type="datetime" />
+    <Property Name="isCheckoutBySystem" Type="int" />
+    <Property Name="txtLongitude" Type="varchar" MaxLength="50" />
+    <Property Name="txtLatitude" Type="varchar" MaxLength="50" />
+    <Property Name="txtDeviceId" Type="varchar" MaxLength="50" />
+    <Property Name="txtUserId" Type="varchar" MaxLength="50" />
+    <Property Name="txtImg1" Type="varchar" MaxLength="300" />
+    <Property Name="txtImg2" Type="varchar" MaxLength="300" />
+    <Property Name="intBitActive" Type="int" />
+    <Property Name="dtInserted" Type="datetime" />
+    <Property Name="txtInsertedBy" Type="varchar" MaxLength="50" />
+    <Property Name="dtUpdated" Type="datetime" />
+    <Property Name="txtUpdatedBy" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tLeaveType">
+    <Key>
+      <PropertyRef Name="typeLeaveId" />
+    </Key>
+    <Property Name="typeLeaveId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="txtleaveCode" Type="varchar" MaxLength="50" />
+    <Property Name="txtleaveName" Type="varchar" MaxLength="50" />
+    <Property Name="txtKeterangan" Type="varchar" MaxLength="50" />
+    <Property Name="bitActive" Type="int" />
+  </EntityType>
+  <EntityType Name="tLogAPI">
+    <Key>
+      <PropertyRef Name="txtGUIID" />
+    </Key>
+    <Property Name="txtGUIID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="txtNamaMethod" Type="varchar" MaxLength="1000" />
+    <Property Name="txtParam" Type="nvarchar(max)" />
+    <Property Name="intResult" Type="int" />
+    <Property Name="txtMessage" Type="varchar" MaxLength="8000" />
+    <Property Name="txtResult" Type="nvarchar(max)" />
+    <Property Name="txtFrom" Type="varchar" MaxLength="100" />
+    <Property Name="txtKeterangan" Type="varchar" MaxLength="500" />
+    <Property Name="txtversion" Type="varchar" MaxLength="100" />
+    <Property Name="dtInserted" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tMenuByRole">
+    <Key>
+      <PropertyRef Name="intMenuOptionID" />
+    </Key>
+    <Property Name="intMenuOptionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="intRoleId" Type="int" />
+    <Property Name="intMenuId" Type="int" />
+    <Property Name="bitActive" Type="int" />
+  </EntityType>
+  <EntityType Name="tMoodSurveyId">
+    <Key>
+      <PropertyRef Name="intMoodSurveyId" />
+    </Key>
+    <Property Name="intMoodSurveyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="txtGUILogin" Type="varchar" MaxLength="50" />
+    <Property Name="txtNIK" Type="varchar" MaxLength="50" />
+    <Property Name="intMoodIdLogin" Type="int" />
+    <Property Name="txtMoodDescLogin" Type="varchar" MaxLength="50" />
+    <Property Name="intMoodIdCheckout" Type="int" />
+    <Property Name="txtMoodDescCheckout" Type="varchar" MaxLength="50" />
+    <Property Name="dtTimeMobile" Type="datetime" />
+    <Property Name="dtInserted" Type="datetime" />
+    <Property Name="dtUpdated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="trackingLocation_mobile">
+    <Key>
+      <PropertyRef Name="GuiId" />
+    </Key>
+    <Property Name="GuiId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="txtGuiIdLogin" Type="varchar" MaxLength="50" />
+    <Property Name="txtLongitude" Type="varchar" MaxLength="50" />
+    <Property Name="txtLatitude" Type="varchar" MaxLength="50" />
+    <Property Name="txtTime" Type="datetime" />
+    <Property Name="txtUserId" Type="varchar" MaxLength="50" />
+    <Property Name="txtUsername" Type="varchar" MaxLength="50" />
+    <Property Name="txtDeviceId" Type="varchar" MaxLength="50" />
+    <Property Name="txtBranchCode" Type="varchar" MaxLength="50" />
+    <Property Name="txtNIK" Type="varchar" MaxLength="50" />
+    <Property Name="intSequence" Type="int" />
+    <Property Name="dtDate" Type="varchar" MaxLength="50" />
+    <Property Name="dtInserted" Type="datetime" />
+    <Property Name="dtUpdated" Type="datetime" />
+    <Property Name="txtInsertedBy" Type="varchar" MaxLength="50" />
+    <Property Name="txtUpdatedBy" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tReportingData">
+    <Key>
+      <PropertyRef Name="intReportId" />
+    </Key>
+    <Property Name="intReportId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="intLeaveId" Type="int" />
+    <Property Name="txtNIK" Type="varchar" MaxLength="50" />
+    <Property Name="txtEmployeeName" Type="varchar" MaxLength="100" />
+    <Property Name="dtAbsenceDate" Type="date" />
+    <Property Name="dtDateIn" Type="date" />
+    <Property Name="dtTimeIn" Type="datetime" />
+    <Property Name="dtDateOut" Type="date" />
+    <Property Name="dtTimeOut" Type="datetime" />
+    <Property Name="txtShiftCode" Type="varchar" MaxLength="50" />
+    <Property Name="txtAtdIn" Type="varchar" MaxLength="50" />
+    <Property Name="txtAtdOut" Type="varchar" MaxLength="50" />
+    <Property Name="Description" Type="varchar" MaxLength="500" />
+    <Property Name="dtInserted" Type="datetime" />
+    <Property Name="dtUpdated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tScheduleEmployeesAbsence">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="txtNIK" Type="varchar" MaxLength="50" />
+    <Property Name="txtEmpName" Type="varchar" MaxLength="50" />
+    <Property Name="dtDate" Type="date" />
+    <Property Name="workGroup" Type="varchar" MaxLength="50" />
+    <Property Name="fixWorkSchedule" Type="varchar" MaxLength="50" />
+    <Property Name="shiftId" Type="int" />
+    <Property Name="shiftCode" Type="varchar" MaxLength="50" />
+    <Property Name="shiftName" Type="varchar" MaxLength="50" />
+    <Property Name="shiftIn" Type="datetime" />
+    <Property Name="shiftOut" Type="datetime" />
+    <Property Name="dtInserted" Type="datetime" />
+    <Property Name="dtUpdated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tUserLogin_mobile">
+    <Key>
+      <PropertyRef Name="txtGUI" />
+    </Key>
+    <Property Name="idUserLogin" Type="varchar" MaxLength="50" />
+    <Property Name="IntCabangID" Type="varchar" MaxLength="50" />
+    <Property Name="txtGUI" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="txtNameApp" Type="varchar" MaxLength="50" />
+    <Property Name="employeeId" Type="varchar" MaxLength="50" />
+    <Property Name="jabatanId" Type="varchar" MaxLength="50" />
+    <Property Name="jabatanName" Type="varchar" MaxLength="50" />
+    <Property Name="txtKodeCabang" Type="varchar" MaxLength="50" />
+    <Property Name="txtNamaCabang" Type="varchar" MaxLength="50" />
+    <Property Name="txtAreaBranchCode" Type="varchar" MaxLength="50" />
+    <Property Name="txtUserID" Type="varchar" MaxLength="50" />
+    <Property Name="txtUserName" Type="varchar" MaxLength="50" />
+    <Property Name="txtName" Type="varchar" MaxLength="50" />
+    <Property Name="txtEmail" Type="varchar" MaxLength="50" />
+    <Property Name="dtLastLogin" Type="datetime" />
+    <Property Name="txtDeviceId" Type="varchar" MaxLength="50" />
+    <Property Name="dtLogOut" Type="datetime" />
+    <Property Name="txtInsertedBy" Type="varchar" MaxLength="50" />
+    <Property Name="dtInserted" Type="datetime" />
+    <Property Name="txtUpdatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="dtUpdated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tUserLoginArea_Mobile">
+    <Key>
+      <PropertyRef Name="txtDetailID" />
+    </Key>
+    <Property Name="txtDetailID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="txtGUI" Type="varchar" MaxLength="50" />
+    <Property Name="employeeId" Type="varchar" MaxLength="50" />
+    <Property Name="txtBranchArea" Type="varchar" MaxLength="50" />
+    <Property Name="txtRegion" Type="varchar" MaxLength="50" />
+    <Property Name="bitActive" Type="int" />
+    <Property Name="dtInserted" Type="datetime" />
+    <Property Name="dtUpdated" Type="datetime" />
+    <Property Name="txtInserted" Type="varchar" MaxLength="50" />
+    <Property Name="txtUpdated" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_tMenuByRole_mMenuAndroid">
+    <End Role="mMenuAndroid" Type="Self.mMenuAndroid" Multiplicity="0..1" />
+    <End Role="tMenuByRole" Type="Self.tMenuByRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mMenuAndroid">
+        <PropertyRef Name="intMenuID" />
+      </Principal>
+      <Dependent Role="tMenuByRole">
+        <PropertyRef Name="intMenuId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tMenuByRole_mRole">
+    <End Role="mRole" Type="Self.mRole" Multiplicity="0..1" />
+    <End Role="tMenuByRole" Type="Self.tMenuByRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mRole">
+        <PropertyRef Name="intRoleID" />
+      </Principal>
+      <Dependent Role="tMenuByRole">
+        <PropertyRef Name="intRoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ABSENSI_HRDBModelStoreContainer">
+    <EntitySet Name="HistoryLeave" EntityType="Self.HistoryLeave" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mAPKFile" EntityType="Self.mAPKFile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mAppParam" EntityType="Self.mAppParam" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mMappingOutletDetail" EntityType="Self.mMappingOutletDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mMappingOutletHeader" EntityType="Self.mMappingOutletHeader" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mMenu" EntityType="Self.mMenu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mMenuAndroid" EntityType="Self.mMenuAndroid" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mModule" EntityType="Self.mModule" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mMoodSurvey" EntityType="Self.mMoodSurvey" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mOutlet" EntityType="Self.mOutlet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mOutletHistory" EntityType="Self.mOutletHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mQrCode" EntityType="Self.mQrCode" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mRole" EntityType="Self.mRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mRoleAccess" EntityType="Self.mRoleAccess" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mSample" EntityType="Self.mSample" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mSystemConfiguration" EntityType="Self.mSystemConfiguration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mUser" EntityType="Self.mUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mUserRole" EntityType="Self.mUserRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tAbsenUser_mobile" EntityType="Self.tAbsenUser_mobile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tAbsenUser_mobile_old" EntityType="Self.tAbsenUser_mobile_old" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tLeaveType" EntityType="Self.tLeaveType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tLogAPI" EntityType="Self.tLogAPI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tMenuByRole" EntityType="Self.tMenuByRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tMoodSurveyId" EntityType="Self.tMoodSurveyId" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="trackingLocation_mobile" EntityType="Self.trackingLocation_mobile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tReportingData" EntityType="Self.tReportingData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tScheduleEmployeesAbsence" EntityType="Self.tScheduleEmployeesAbsence" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tUserLogin_mobile" EntityType="Self.tUserLogin_mobile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tUserLoginArea_Mobile" EntityType="Self.tUserLoginArea_Mobile" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tMenuByRole_mMenuAndroid" Association="Self.FK_tMenuByRole_mMenuAndroid">
+      <End Role="mMenuAndroid" EntitySet="mMenuAndroid" />
+      <End Role="tMenuByRole" EntitySet="tMenuByRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tMenuByRole_mRole" Association="Self.FK_tMenuByRole_mRole">
+      <End Role="mRole" EntitySet="mRole" />
+      <End Role="tMenuByRole" EntitySet="tMenuByRole" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

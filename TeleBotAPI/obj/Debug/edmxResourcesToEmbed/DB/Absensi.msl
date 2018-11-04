@@ -1,0 +1,475 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ABSENSI_HRDBModelStoreContainer" CdmEntityContainer="ABSENSI_HRDBEntities">
+    <EntitySetMapping Name="HistoryLeaves">
+      <EntityTypeMapping TypeName="ABSENSI_HRDBModel.HistoryLeave">
+        <MappingFragment StoreEntitySet="HistoryLeave">
+          <ScalarProperty Name="intHistoryLeaveId" ColumnName="intHistoryLeaveId" />
+          <ScalarProperty Name="txtGuiIdAbsen" ColumnName="txtGuiIdAbsen" />
+          <ScalarProperty Name="txtNIK" ColumnName="txtNIK" />
+          <ScalarProperty Name="txtUsername" ColumnName="txtUsername" />
+          <ScalarProperty Name="intLeaveId" ColumnName="intLeaveId" />
+          <ScalarProperty Name="txtLeaveName" ColumnName="txtLeaveName" />
+          <ScalarProperty Name="txtReason" ColumnName="txtReason" />
+          <ScalarProperty Name="txtTime" ColumnName="txtTime" />
+          <ScalarProperty Name="dtInserted" ColumnName="dtInserted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mAPKFiles">
+      <EntityTypeMapping TypeName="ABSENSI_HRDBModel.mAPKFile">
+        <MappingFragment StoreEntitySet="mAPKFile">
+          <ScalarProperty Name="intIdLink" ColumnName="intIdLink" />
+          <ScalarProperty Name="txtNameApp" ColumnName="txtNameApp" />
+          <ScalarProperty Name="txtLinkApp" ColumnName="txtLinkApp" />
+          <ScalarProperty Name="bitActive" ColumnName="bitActive" />
+          <ScalarProperty Name="dtInserted" ColumnName="dtInserted" />
+          <ScalarProperty Name="txtInsertedBy" ColumnName="txtInsertedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mAppParams">
+      <EntityTypeMapping TypeName="ABSENSI_HRDBModel.mAppParam">
+        <MappingFragment StoreEntitySet="mAppParam">
+          <ScalarProperty Name="txtAppParamID" ColumnName="txtAppParamID" />
+          <ScalarProperty Name="txtAppParamDescription" ColumnName="txtAppParamDescription" />
+          <ScalarProperty Name="txtAppParamVariable" ColumnName="txtAppParamVariable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mMappingOutletDetails">
+      <EntityTypeMapping TypeName="ABSENSI_HRDBModel.mMappingOutletDetail">
+        <MappingFragment StoreEntitySet="mMappingOutletDetail">
+          <ScalarProperty Name="intDetailId" ColumnName="intDetailId" />
+          <ScalarProperty Name="intHeaderId" ColumnName="intHeaderId" />
+          <ScalarProperty Name="txtPositionCode" ColumnName="txtPositionCode" />
+          <ScalarProperty Name="txtJobtitle" ColumnName="txtJobtitle" />
+          <ScalarProperty Name="txtOrgGroupCode" ColumnName="txtOrgGroupCode" />
+          <ScalarProperty Name="txtOrgCode" ColumnName="txtOrgCode" />
+          <ScalarProperty Name="txtJobLvlCode" ColumnName="txtJobLvlCode" />
+          <ScalarProperty Name="txtCostCentreCode" ColumnName="txtCostCentreCode" />
+          <ScalarProperty Name="txtEmpType" ColumnName="txtEmpType" />
+          <ScalarProperty Name="txtBranchCode" ColumnName="txtBranchCode" />
+          <ScalarProperty Name="bitActive" ColumnName="bitActive" />
+          <ScalarProperty Name="dtInserted" ColumnName="dtInserted" />
+          <ScalarProperty Name="dtUpdated" ColumnName="dtUpdated" />
+          <ScalarProperty Name="txtInsertedBy" ColumnName="txtInsertedBy" />
+          <ScalarProperty Name="txtUpdatedBy" ColumnName="txtUpdatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mMappingOutletHeaders">
+      <EntityTypeMapping TypeName="ABSENSI_HRDBModel.mMappingOutletHeader">
+        <MappingFragment StoreEntitySet="mMappingOutletHeader">
+          <ScalarProperty Name="intHeader" ColumnName="intHeader" />
+          <ScalarProperty Name="intOutletId" ColumnName="intOutletId" />
+          <ScalarProperty Name="bitActive" ColumnName="bitActive" />
+          <ScalarProperty Name="dtInserted" ColumnName="dtInserted" />
+          <ScalarProperty Name="dtUpdated" ColumnName="dtUpdated" />
+          <ScalarProperty Name="txtInsertedBy" ColumnName="txtInsertedBy" />
+          <ScalarProperty Name="txtUpdatedBy" ColumnName="txtUpdatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mMenus">
+      <EntityTypeMapping TypeName="ABSENSI_HRDBModel.mMenu">
+        <MappingFragment StoreEntitySet="mMenu">
+          <ScalarProperty Name="intMenuID" ColumnName="intMenuID" />
+          <ScalarProperty Name="intParentID" ColumnName="intParentID" />
+          <ScalarProperty Name="txtMenuName" ColumnName="txtMenuName" />
+          <ScalarProperty Name="txtDescription" ColumnName="txtDescription" />
+          <ScalarProperty Name="intModuleID" ColumnName="intModuleID" />
+          <ScalarProperty Name="txtLink" ColumnName="txtLink" />
+          <ScalarProperty Name="intOrderID" ColumnName="intOrderID" />
+          <ScalarProperty Name="bitActive" ColumnName="bitActive" />
+          <ScalarProperty Name="txtCreateBy" ColumnName="txtCreateBy" />
+          <ScalarProperty Name="dtCreateDate" ColumnName="dtCreateDate" />
+          <ScalarProperty Name="txtUpdateBy" ColumnName="txtUpdateBy" />
+          <ScalarProperty Name="dtUpdateDate" ColumnName="dtUpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mMenuAndroids">
+      <EntityTypeMapping TypeName="ABSENSI_HRDBModel.mMenuAndroid">
+        <MappingFragment StoreEntitySet="mMenuAndroid">
+          <ScalarProperty Name="intMenuID" ColumnName="intMenuID" />
+          <ScalarProperty Name="txtMenu" ColumnName="txtMenu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mModules">
+      <EntityTypeMapping TypeName="ABSENSI_HRDBModel.mModule">
+        <MappingFragment StoreEntitySet="mModule">
+          <ScalarProperty Name="intModuleID" ColumnName="intModuleID" />
+          <ScalarProperty Name="txtModuleName" ColumnName="txtModuleName" />
+          <ScalarProperty Name="txtDescription" ColumnName="txtDescription" />
+          <ScalarProperty Name="txtCreateBy" ColumnName="txtCreateBy" />
+          <ScalarProperty Name="dtCreateDate" ColumnName="dtCreateDate" />
+          <ScalarProperty Name="txtUpdateBy" ColumnName="txtUpdateBy" />
+          <ScalarProperty Name="dtUpdateDate" ColumnName="dtUpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mMoodSurveys">
+      <EntityTypeMapping TypeName="ABSENSI_HRDBModel.mMoodSurvey">
+        <MappingFragment StoreEntitySet="mMoodSurvey">
+          <ScalarProperty Name="intMoodId" ColumnName="intMoodId" />
+          <ScalarProperty Name="txtMoodDesc" ColumnName="txtMoodDesc" />
+          <ScalarProperty Name="bitactive" ColumnName="bitactive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mOutlets">
+      <EntityTypeMapping TypeName="ABSENSI_HRDBModel.mOutlet">
+        <MappingFragment StoreEntitySet="mOutlet">
+          <ScalarProperty Name="mOutletId" ColumnName="mOutletId" />
+          <ScalarProperty Name="intOutletId" ColumnName="intOutletId" />
+          <ScalarProperty Name="txtOutletName" ColumnName="txtOutletName" />
+          <ScalarProperty Name="txtLongitude" ColumnName="txtLongitude" />
+          <ScalarProperty Name="txtLatitude" ColumnName="txtLatitude" />
+          <ScalarProperty Name="txtBranchCode" ColumnName="txtBranchCode" />
+          <ScalarProperty Name="intRegionID" ColumnName="intRegionID" />
+          <ScalarProperty Name="bitactive" ColumnName="bitactive" />
+          <ScalarProperty Name="dtInserted" ColumnName="dtInserted" />
+          <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+          <ScalarProperty Name="dtUpdated" ColumnName="dtUpdated" />
+          <ScalarProperty Name="txtUpdatedBy" ColumnName="txtUpdatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mOutletHistories">
+      <EntityTypeMapping TypeName="ABSENSI_HRDBModel.mOutletHistory">
+        <MappingFragment StoreEntitySet="mOutletHistory">
+          <ScalarProperty Name="mOutletId" ColumnName="mOutletId" />
+          <ScalarProperty Name="intOutletId" ColumnName="intOutletId" />
+          <ScalarProperty Name="txtOutletName" ColumnName="txtOutletName" />
+          <ScalarProperty Name="txtLongitude" ColumnName="txtLongitude" />
+          <ScalarProperty Name="txtLatitude" ColumnName="txtLatitude" />
+          <ScalarProperty Name="txtBranchCode" ColumnName="txtBranchCode" />
+          <ScalarProperty Name="intRegionID" ColumnName="intRegionID" />
+          <ScalarProperty Name="bitactive" ColumnName="bitactive" />
+          <ScalarProperty Name="dtInserted" ColumnName="dtInserted" />
+          <ScalarProperty Name="InsertedBy" ColumnName="InsertedBy" />
+          <ScalarProperty Name="dtUpdated" ColumnName="dtUpdated" />
+          <ScalarProperty Name="txtUpdatedBy" ColumnName="txtUpdatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mQrCodes">
+      <EntityTypeMapping TypeName="ABSENSI_HRDBModel.mQrCode">
+        <MappingFragment StoreEntitySet="mQrCode">
+          <ScalarProperty Name="intQrId" ColumnName="intQrId" />
+          <ScalarProperty Name="txtCode" ColumnName="txtCode" />
+          <ScalarProperty Name="dtDate" ColumnName="dtDate" />
+          <ScalarProperty Name="mOutletId" ColumnName="mOutletId" />
+          <ScalarProperty Name="txtOutletName" ColumnName="txtOutletName" />
+          <ScalarProperty Name="bitActive" ColumnName="bitActive" />
+          <ScalarProperty Name="dtInserted" ColumnName="dtInserted" />
+          <ScalarProperty Name="txtInsertedBy" ColumnName="txtInsertedBy" />
+          <ScalarProperty Name="dtUpdated" ColumnName="dtUpdated" />
+          <ScalarProperty Name="txtUpdatedBy" ColumnName="txtUpdatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mRoles">
+      <EntityTypeMapping TypeName="ABSENSI_HRDBModel.mRole">
+        <MappingFragment StoreEntitySet="mRole">
+          <ScalarProperty Name="intRoleID" ColumnName="intRoleID" />
+          <ScalarProperty Name="txtRoleName" ColumnName="txtRoleName" />
+          <ScalarProperty Name="txtCreateBy" ColumnName="txtCreateBy" />
+          <ScalarProperty Name="dtCreateDate" ColumnName="dtCreateDate" />
+          <ScalarProperty Name="txtUpdateBy" ColumnName="txtUpdateBy" />
+          <ScalarProperty Name="dtUpdateDate" ColumnName="dtUpdateDate" />
+          <ScalarProperty Name="bitSuperuser" ColumnName="bitSuperuser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mRoleAccesses">
+      <EntityTypeMapping TypeName="ABSENSI_HRDBModel.mRoleAccess">
+        <MappingFragment StoreEntitySet="mRoleAccess">
+          <ScalarProperty Name="intRoleAccessID" ColumnName="intRoleAccessID" />
+          <ScalarProperty Name="intRoleID" ColumnName="intRoleID" />
+          <ScalarProperty Name="intModuleID" ColumnName="intModuleID" />
+          <ScalarProperty Name="bitEdit" ColumnName="bitEdit" />
+          <ScalarProperty Name="bitView" ColumnName="bitView" />
+          <ScalarProperty Name="bitDelete" ColumnName="bitDelete" />
+          <ScalarProperty Name="bitPrint" ColumnName="bitPrint" />
+          <ScalarProperty Name="txtCreateBy" ColumnName="txtCreateBy" />
+          <ScalarProperty Name="dtCreateDate" ColumnName="dtCreateDate" />
+          <ScalarProperty Name="txtUpdateBy" ColumnName="txtUpdateBy" />
+          <ScalarProperty Name="dtUpdateDate" ColumnName="dtUpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mSamples">
+      <EntityTypeMapping TypeName="ABSENSI_HRDBModel.mSample">
+        <MappingFragment StoreEntitySet="mSample">
+          <ScalarProperty Name="intID" ColumnName="intID" />
+          <ScalarProperty Name="txtSample1" ColumnName="txtSample1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mSystemConfigurations">
+      <EntityTypeMapping TypeName="ABSENSI_HRDBModel.mSystemConfiguration">
+        <MappingFragment StoreEntitySet="mSystemConfiguration">
+          <ScalarProperty Name="txtSystemConfigurationID" ColumnName="txtSystemConfigurationID" />
+          <ScalarProperty Name="txtKeyID" ColumnName="txtKeyID" />
+          <ScalarProperty Name="intModuleID" ColumnName="intModuleID" />
+          <ScalarProperty Name="txtDescription" ColumnName="txtDescription" />
+          <ScalarProperty Name="txtDefaultValue" ColumnName="txtDefaultValue" />
+          <ScalarProperty Name="txtValue" ColumnName="txtValue" />
+          <ScalarProperty Name="txtCreateBy" ColumnName="txtCreateBy" />
+          <ScalarProperty Name="dtCreateDate" ColumnName="dtCreateDate" />
+          <ScalarProperty Name="txtUpdateBy" ColumnName="txtUpdateBy" />
+          <ScalarProperty Name="dtUpdateDate" ColumnName="dtUpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mUsers">
+      <EntityTypeMapping TypeName="ABSENSI_HRDBModel.mUser">
+        <MappingFragment StoreEntitySet="mUser">
+          <ScalarProperty Name="intUserID" ColumnName="intUserID" />
+          <ScalarProperty Name="txtUserName" ColumnName="txtUserName" />
+          <ScalarProperty Name="txtNick" ColumnName="txtNick" />
+          <ScalarProperty Name="txtEmpID" ColumnName="txtEmpID" />
+          <ScalarProperty Name="txtEmail" ColumnName="txtEmail" />
+          <ScalarProperty Name="intDepartmentID" ColumnName="intDepartmentID" />
+          <ScalarProperty Name="intLOBID" ColumnName="intLOBID" />
+          <ScalarProperty Name="txtCompanyCode" ColumnName="txtCompanyCode" />
+          <ScalarProperty Name="bitActive" ColumnName="bitActive" />
+          <ScalarProperty Name="txtDomainName" ColumnName="txtDomainName" />
+          <ScalarProperty Name="bitUseActiveDirectory" ColumnName="bitUseActiveDirectory" />
+          <ScalarProperty Name="txtPassword" ColumnName="txtPassword" />
+          <ScalarProperty Name="txtCreateBy" ColumnName="txtCreateBy" />
+          <ScalarProperty Name="dtCreateDate" ColumnName="dtCreateDate" />
+          <ScalarProperty Name="txtUpdateBy" ColumnName="txtUpdateBy" />
+          <ScalarProperty Name="dtUpdateDate" ColumnName="dtUpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mUserRoles">
+      <EntityTypeMapping TypeName="ABSENSI_HRDBModel.mUserRole">
+        <MappingFragment StoreEntitySet="mUserRole">
+          <ScalarProperty Name="intUserRoleID" ColumnName="intUserRoleID" />
+          <ScalarProperty Name="intRoleID" ColumnName="intRoleID" />
+          <ScalarProperty Name="intUserID" ColumnName="intUserID" />
+          <ScalarProperty Name="txtCreateBy" ColumnName="txtCreateBy" />
+          <ScalarProperty Name="dtCreateDate" ColumnName="dtCreateDate" />
+          <ScalarProperty Name="txtUpdateBy" ColumnName="txtUpdateBy" />
+          <ScalarProperty Name="dtUpdateDate" ColumnName="dtUpdateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tAbsenUser_mobile">
+      <EntityTypeMapping TypeName="ABSENSI_HRDBModel.tAbsenUser_mobile">
+        <MappingFragment StoreEntitySet="tAbsenUser_mobile">
+          <ScalarProperty Name="txtGUI_ID" ColumnName="txtGUI_ID" />
+          <ScalarProperty Name="txtGuiIdLogin" ColumnName="txtGuiIdLogin" />
+          <ScalarProperty Name="txtNIK" ColumnName="txtNIK" />
+          <ScalarProperty Name="intOutletId" ColumnName="intOutletId" />
+          <ScalarProperty Name="dtCheckin" ColumnName="dtCheckin" />
+          <ScalarProperty Name="dtCheckout" ColumnName="dtCheckout" />
+          <ScalarProperty Name="isCheckoutBySystem" ColumnName="isCheckoutBySystem" />
+          <ScalarProperty Name="txtLongitude" ColumnName="txtLongitude" />
+          <ScalarProperty Name="txtLatitude" ColumnName="txtLatitude" />
+          <ScalarProperty Name="intRegionID" ColumnName="intRegionID" />
+          <ScalarProperty Name="txtBranchCode" ColumnName="txtBranchCode" />
+          <ScalarProperty Name="txtDeviceId" ColumnName="txtDeviceId" />
+          <ScalarProperty Name="txtDeviceName" ColumnName="txtDeviceName" />
+          <ScalarProperty Name="txtUserId" ColumnName="txtUserId" />
+          <ScalarProperty Name="qrCode" ColumnName="qrCode" />
+          <ScalarProperty Name="txtHeaderMappingCode" ColumnName="txtHeaderMappingCode" />
+          <ScalarProperty Name="txtDetailMappingCode" ColumnName="txtDetailMappingCode" />
+          <ScalarProperty Name="intBitActive" ColumnName="intBitActive" />
+          <ScalarProperty Name="dtInserted" ColumnName="dtInserted" />
+          <ScalarProperty Name="txtInsertedBy" ColumnName="txtInsertedBy" />
+          <ScalarProperty Name="dtUpdated" ColumnName="dtUpdated" />
+          <ScalarProperty Name="txtUpdatedBy" ColumnName="txtUpdatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tAbsenUser_mobile_old">
+      <EntityTypeMapping TypeName="ABSENSI_HRDBModel.tAbsenUser_mobile_old">
+        <MappingFragment StoreEntitySet="tAbsenUser_mobile_old">
+          <ScalarProperty Name="txtGUI_ID" ColumnName="txtGUI_ID" />
+          <ScalarProperty Name="txtGuiIdLogin" ColumnName="txtGuiIdLogin" />
+          <ScalarProperty Name="txtDataIdGL" ColumnName="txtDataIdGL" />
+          <ScalarProperty Name="txtOutletCode" ColumnName="txtOutletCode" />
+          <ScalarProperty Name="dtAbsen" ColumnName="dtAbsen" />
+          <ScalarProperty Name="dtCheckin" ColumnName="dtCheckin" />
+          <ScalarProperty Name="dtCheckout" ColumnName="dtCheckout" />
+          <ScalarProperty Name="isCheckoutBySystem" ColumnName="isCheckoutBySystem" />
+          <ScalarProperty Name="txtLongitude" ColumnName="txtLongitude" />
+          <ScalarProperty Name="txtLatitude" ColumnName="txtLatitude" />
+          <ScalarProperty Name="txtDeviceId" ColumnName="txtDeviceId" />
+          <ScalarProperty Name="txtUserId" ColumnName="txtUserId" />
+          <ScalarProperty Name="txtImg1" ColumnName="txtImg1" />
+          <ScalarProperty Name="txtImg2" ColumnName="txtImg2" />
+          <ScalarProperty Name="intBitActive" ColumnName="intBitActive" />
+          <ScalarProperty Name="dtInserted" ColumnName="dtInserted" />
+          <ScalarProperty Name="txtInsertedBy" ColumnName="txtInsertedBy" />
+          <ScalarProperty Name="dtUpdated" ColumnName="dtUpdated" />
+          <ScalarProperty Name="txtUpdatedBy" ColumnName="txtUpdatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tLeaveTypes">
+      <EntityTypeMapping TypeName="ABSENSI_HRDBModel.tLeaveType">
+        <MappingFragment StoreEntitySet="tLeaveType">
+          <ScalarProperty Name="typeLeaveId" ColumnName="typeLeaveId" />
+          <ScalarProperty Name="txtleaveCode" ColumnName="txtleaveCode" />
+          <ScalarProperty Name="txtleaveName" ColumnName="txtleaveName" />
+          <ScalarProperty Name="txtKeterangan" ColumnName="txtKeterangan" />
+          <ScalarProperty Name="bitActive" ColumnName="bitActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tLogAPIs">
+      <EntityTypeMapping TypeName="ABSENSI_HRDBModel.tLogAPI">
+        <MappingFragment StoreEntitySet="tLogAPI">
+          <ScalarProperty Name="txtGUIID" ColumnName="txtGUIID" />
+          <ScalarProperty Name="txtNamaMethod" ColumnName="txtNamaMethod" />
+          <ScalarProperty Name="txtParam" ColumnName="txtParam" />
+          <ScalarProperty Name="intResult" ColumnName="intResult" />
+          <ScalarProperty Name="txtMessage" ColumnName="txtMessage" />
+          <ScalarProperty Name="txtResult" ColumnName="txtResult" />
+          <ScalarProperty Name="txtFrom" ColumnName="txtFrom" />
+          <ScalarProperty Name="txtKeterangan" ColumnName="txtKeterangan" />
+          <ScalarProperty Name="txtversion" ColumnName="txtversion" />
+          <ScalarProperty Name="dtInserted" ColumnName="dtInserted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tMenuByRoles">
+      <EntityTypeMapping TypeName="ABSENSI_HRDBModel.tMenuByRole">
+        <MappingFragment StoreEntitySet="tMenuByRole">
+          <ScalarProperty Name="intMenuOptionID" ColumnName="intMenuOptionID" />
+          <ScalarProperty Name="intRoleId" ColumnName="intRoleId" />
+          <ScalarProperty Name="intMenuId" ColumnName="intMenuId" />
+          <ScalarProperty Name="bitActive" ColumnName="bitActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tMoodSurveyIds">
+      <EntityTypeMapping TypeName="ABSENSI_HRDBModel.tMoodSurveyId">
+        <MappingFragment StoreEntitySet="tMoodSurveyId">
+          <ScalarProperty Name="intMoodSurveyId" ColumnName="intMoodSurveyId" />
+          <ScalarProperty Name="txtGUILogin" ColumnName="txtGUILogin" />
+          <ScalarProperty Name="txtNIK" ColumnName="txtNIK" />
+          <ScalarProperty Name="intMoodIdLogin" ColumnName="intMoodIdLogin" />
+          <ScalarProperty Name="txtMoodDescLogin" ColumnName="txtMoodDescLogin" />
+          <ScalarProperty Name="intMoodIdCheckout" ColumnName="intMoodIdCheckout" />
+          <ScalarProperty Name="txtMoodDescCheckout" ColumnName="txtMoodDescCheckout" />
+          <ScalarProperty Name="dtTimeMobile" ColumnName="dtTimeMobile" />
+          <ScalarProperty Name="dtInserted" ColumnName="dtInserted" />
+          <ScalarProperty Name="dtUpdated" ColumnName="dtUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="trackingLocation_mobile">
+      <EntityTypeMapping TypeName="ABSENSI_HRDBModel.trackingLocation_mobile">
+        <MappingFragment StoreEntitySet="trackingLocation_mobile">
+          <ScalarProperty Name="GuiId" ColumnName="GuiId" />
+          <ScalarProperty Name="txtGuiIdLogin" ColumnName="txtGuiIdLogin" />
+          <ScalarProperty Name="txtLongitude" ColumnName="txtLongitude" />
+          <ScalarProperty Name="txtLatitude" ColumnName="txtLatitude" />
+          <ScalarProperty Name="txtTime" ColumnName="txtTime" />
+          <ScalarProperty Name="txtUserId" ColumnName="txtUserId" />
+          <ScalarProperty Name="txtUsername" ColumnName="txtUsername" />
+          <ScalarProperty Name="txtDeviceId" ColumnName="txtDeviceId" />
+          <ScalarProperty Name="txtBranchCode" ColumnName="txtBranchCode" />
+          <ScalarProperty Name="txtNIK" ColumnName="txtNIK" />
+          <ScalarProperty Name="intSequence" ColumnName="intSequence" />
+          <ScalarProperty Name="dtDate" ColumnName="dtDate" />
+          <ScalarProperty Name="dtInserted" ColumnName="dtInserted" />
+          <ScalarProperty Name="dtUpdated" ColumnName="dtUpdated" />
+          <ScalarProperty Name="txtInsertedBy" ColumnName="txtInsertedBy" />
+          <ScalarProperty Name="txtUpdatedBy" ColumnName="txtUpdatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tReportingDatas">
+      <EntityTypeMapping TypeName="ABSENSI_HRDBModel.tReportingData">
+        <MappingFragment StoreEntitySet="tReportingData">
+          <ScalarProperty Name="intReportId" ColumnName="intReportId" />
+          <ScalarProperty Name="intLeaveId" ColumnName="intLeaveId" />
+          <ScalarProperty Name="txtNIK" ColumnName="txtNIK" />
+          <ScalarProperty Name="txtEmployeeName" ColumnName="txtEmployeeName" />
+          <ScalarProperty Name="dtAbsenceDate" ColumnName="dtAbsenceDate" />
+          <ScalarProperty Name="dtDateIn" ColumnName="dtDateIn" />
+          <ScalarProperty Name="dtTimeIn" ColumnName="dtTimeIn" />
+          <ScalarProperty Name="dtDateOut" ColumnName="dtDateOut" />
+          <ScalarProperty Name="dtTimeOut" ColumnName="dtTimeOut" />
+          <ScalarProperty Name="txtShiftCode" ColumnName="txtShiftCode" />
+          <ScalarProperty Name="txtAtdIn" ColumnName="txtAtdIn" />
+          <ScalarProperty Name="txtAtdOut" ColumnName="txtAtdOut" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="dtInserted" ColumnName="dtInserted" />
+          <ScalarProperty Name="dtUpdated" ColumnName="dtUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tScheduleEmployeesAbsences">
+      <EntityTypeMapping TypeName="ABSENSI_HRDBModel.tScheduleEmployeesAbsence">
+        <MappingFragment StoreEntitySet="tScheduleEmployeesAbsence">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="txtNIK" ColumnName="txtNIK" />
+          <ScalarProperty Name="txtEmpName" ColumnName="txtEmpName" />
+          <ScalarProperty Name="dtDate" ColumnName="dtDate" />
+          <ScalarProperty Name="workGroup" ColumnName="workGroup" />
+          <ScalarProperty Name="fixWorkSchedule" ColumnName="fixWorkSchedule" />
+          <ScalarProperty Name="shiftId" ColumnName="shiftId" />
+          <ScalarProperty Name="shiftCode" ColumnName="shiftCode" />
+          <ScalarProperty Name="shiftName" ColumnName="shiftName" />
+          <ScalarProperty Name="shiftIn" ColumnName="shiftIn" />
+          <ScalarProperty Name="shiftOut" ColumnName="shiftOut" />
+          <ScalarProperty Name="dtInserted" ColumnName="dtInserted" />
+          <ScalarProperty Name="dtUpdated" ColumnName="dtUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tUserLogin_mobile">
+      <EntityTypeMapping TypeName="ABSENSI_HRDBModel.tUserLogin_mobile">
+        <MappingFragment StoreEntitySet="tUserLogin_mobile">
+          <ScalarProperty Name="idUserLogin" ColumnName="idUserLogin" />
+          <ScalarProperty Name="IntCabangID" ColumnName="IntCabangID" />
+          <ScalarProperty Name="txtGUI" ColumnName="txtGUI" />
+          <ScalarProperty Name="txtNameApp" ColumnName="txtNameApp" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="jabatanId" ColumnName="jabatanId" />
+          <ScalarProperty Name="jabatanName" ColumnName="jabatanName" />
+          <ScalarProperty Name="txtKodeCabang" ColumnName="txtKodeCabang" />
+          <ScalarProperty Name="txtNamaCabang" ColumnName="txtNamaCabang" />
+          <ScalarProperty Name="txtAreaBranchCode" ColumnName="txtAreaBranchCode" />
+          <ScalarProperty Name="txtUserID" ColumnName="txtUserID" />
+          <ScalarProperty Name="txtUserName" ColumnName="txtUserName" />
+          <ScalarProperty Name="txtName" ColumnName="txtName" />
+          <ScalarProperty Name="txtEmail" ColumnName="txtEmail" />
+          <ScalarProperty Name="dtLastLogin" ColumnName="dtLastLogin" />
+          <ScalarProperty Name="txtDeviceId" ColumnName="txtDeviceId" />
+          <ScalarProperty Name="dtLogOut" ColumnName="dtLogOut" />
+          <ScalarProperty Name="txtInsertedBy" ColumnName="txtInsertedBy" />
+          <ScalarProperty Name="dtInserted" ColumnName="dtInserted" />
+          <ScalarProperty Name="txtUpdatedBy" ColumnName="txtUpdatedBy" />
+          <ScalarProperty Name="dtUpdated" ColumnName="dtUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tUserLoginArea_Mobile">
+      <EntityTypeMapping TypeName="ABSENSI_HRDBModel.tUserLoginArea_Mobile">
+        <MappingFragment StoreEntitySet="tUserLoginArea_Mobile">
+          <ScalarProperty Name="txtDetailID" ColumnName="txtDetailID" />
+          <ScalarProperty Name="txtGUI" ColumnName="txtGUI" />
+          <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+          <ScalarProperty Name="txtBranchArea" ColumnName="txtBranchArea" />
+          <ScalarProperty Name="txtRegion" ColumnName="txtRegion" />
+          <ScalarProperty Name="bitActive" ColumnName="bitActive" />
+          <ScalarProperty Name="dtInserted" ColumnName="dtInserted" />
+          <ScalarProperty Name="dtUpdated" ColumnName="dtUpdated" />
+          <ScalarProperty Name="txtInserted" ColumnName="txtInserted" />
+          <ScalarProperty Name="txtUpdated" ColumnName="txtUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
